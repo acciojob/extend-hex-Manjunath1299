@@ -1,10 +1,15 @@
 const extendHex = (shortHex) => {
-if(shortHex.length==4){
-  
-   return `#${shortHex[1]}${shortHex[1]}${shortHex[2]${shortHex[2]}${shortHex[3]}${shortHex[3]}}`
-}
-else
-return `#${shortHex[0]}${shortHex[0]}${shortHex[1]${shortHex[1]}${shortHex[2]}${shortHex[2]}}`
+ let len=shortHex.length-3,isCapital=false;
+ let output='#';
+  while(i<shortHex.length){
+	  let asciicode=shortHex[i].charCodeAt(0);
+	  if(asciicode>=65 && asciicode<=90){
+		  isCapital=true;
+	  }
+	  output+=shortHex[i]+shortHex[i];
+	  i++;
+  }
+	return isCapital?output.toUpperCase():output;
 };
 // Do not change the code below.
 const shortHex = prompt("Enter Short Hex.");
