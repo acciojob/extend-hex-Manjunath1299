@@ -1,13 +1,14 @@
 const extendHex = (shortHex) => {
  let len=shortHex.length-3,isCapital=false;
  let output='#';
-  while(i<shortHex.length){
-	  let asciicode=shortHex[i].charCodeAt(0);
+  while(len<shortHex.length){
+	  let asciicode=shortHex[len].charCodeAt();
 	  if(asciicode>=65 && asciicode<=90){
 		  isCapital=true;
 	  }
-	  output+=shortHex[i]+shortHex[i];
-	  i++;
+	  output+=shortHex[len]+shortHex[len];
+	  console.log(shortHex);
+	  len++;
   }
 	return isCapital?output.toUpperCase():output;
 };
